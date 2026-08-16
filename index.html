@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- this makes the emojis show up properly instead of weird symbols -->
+    <meta charset="utf-8" />
+    <title>AnshOS</title>
+    <!-- this line connects my css file so the colors and shapes work -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+
+    <!-- ============ THE TOP BAR (part 2) ============ -->
+    <!-- display flex puts things in a row, space-between pushes them apart -->
+    <div id="topbar">
+      <p style="margin: 0px; font-weight: bold;">AnshOS</p>
+      <p style="margin: 0px;">my little internet computer</p>
+      <!-- the id lets javascript find this and put the time inside it -->
+      <p id="timeElement" style="margin: 0px;">Loading time...</p>
+    </div>
+
+
+    <!-- ============ THE APP ICONS ON THE DESKTOP (part 4) ============ -->
+    <div id="desktopApps" style="padding-top: 64px; padding-left: 16px;">
+
+      <!-- icon 1 -->
+      <div class="icon" id="welcomeopen">
+        <p class="iconpicture">👋</p>
+        <p class="iconlabel">Welcome</p>
+      </div>
+
+      <!-- icon 2 -->
+      <div class="icon" id="notesopen">
+        <p class="iconpicture">📓</p>
+        <p class="iconlabel">Notes</p>
+      </div>
+
+      <!-- icon 3 -->
+      <div class="icon" id="projectsopen">
+        <p class="iconpicture">🚀</p>
+        <p class="iconlabel">Projects</p>
+      </div>
+
+    </div>
+
+
+    <!-- ============ WINDOW 1 : WELCOME (part 1 + part 3) ============ -->
+    <!-- class="window" gives it the border and the box shape from style.css -->
+    <div class="window" id="welcome" style="top: 120px; left: 300px; width: 320px;">
+
+      <!-- the header is the part you grab to drag the window around -->
+      <div class="windowheader" id="welcomeheader">
+        <div class="closebutton" id="welcomeclose"></div>
+        <p class="windowtitle">Welcome</p>
+      </div>
+
+      <div class="windowbody">
+        <h1 style="margin-top: 0px;">Hi, I'm Ansh 👋</h1>
+        <p>
+          Instead of a boring website I made a whole little
+          <b>operating system</b>. Click the icons on the left to
+          look around!
+        </p>
+        <p>
+          Things I like: building websites, discord bots,
+          and staying up way too late fixing bugs.
+        </p>
+        <a href="https://hackclub.com" target="_blank">my favourite website</a>
+      </div>
+    </div>
+
+
+    <!-- ============ WINDOW 2 : NOTES APP (part 4) ============ -->
+    <!-- display none means it starts hidden until you click the icon -->
+    <div class="window" id="notes" style="top: 160px; left: 420px; width: 520px; display: none;">
+
+      <div class="windowheader" id="notesheader">
+        <div class="closebutton" id="notesclose"></div>
+        <p class="windowtitle" id="notestitle">Notes</p>
+      </div>
+
+      <!-- this window has 2 parts side by side so i used flex again -->
+      <div class="windowbody" style="display: flex; padding: 0px; height: 260px;">
+
+        <!-- the left list. javascript fills this one in by itself -->
+        <div id="notesSidebar"></div>
+
+        <!-- the right side where the actual note shows up -->
+        <div id="notesContent">
+          <p style="color: gray;">Pick a note on the left to read it :)</p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ============ WINDOW 3 : PROJECTS APP (part 5) ============ -->
+    <div class="window" id="projects" style="top: 200px; left: 200px; width: 480px; display: none;">
+
+      <div class="windowheader" id="projectsheader">
+        <div class="closebutton" id="projectsclose"></div>
+        <p class="windowtitle">Projects</p>
+      </div>
+
+      <div class="windowbody">
+        <p style="margin-top: 0px;">Tap a project to see what it is.</p>
+
+        <!-- javascript makes all the little project cards in here -->
+        <div id="projectsGrid"></div>
+
+        <!-- and the description shows up down here -->
+        <div id="projectsInfo">
+          <p style="color: gray; margin: 0px;">nothing selected yet</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- this has to be at the BOTTOM or javascript cant find my divs -->
+    <script src="script.js"></script>
+  </body>
+</html>
