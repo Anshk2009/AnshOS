@@ -1,0 +1,190 @@
+/* ============================================
+   my operating system styles
+   i put all the stuff i use more than once in here
+   ============================================ */
+
+
+/* the whole page. the background is my wallpaper */
+body {
+  margin: 0px;
+  height: 100vh;
+  overflow: hidden; /* stops the page from scrolling like a normal website */
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+
+  /* i didnt have a picture i liked so i made a gradient wallpaper */
+  background-image: linear-gradient(160deg, #ffb88c, #7f7fd5, #2b2b4f);
+  background-size: cover;
+}
+
+
+/* ---------- the bar at the top of the screen ---------- */
+#topbar {
+  display: flex;                /* puts my 3 bits of text in a row */
+  justify-content: space-between; /* pushes them to the edges */
+  align-items: center;
+
+  position: absolute;  /* sticks it to the top of the screen */
+  top: 0px;
+  left: 0px;
+  width: 100%;
+
+  padding: 8px 16px;
+  box-sizing: border-box; /* without this the padding made it too wide */
+
+  color: #fff;
+  font-size: 14px;
+
+  background-color: rgba(0, 0, 0, 0.25); /* the 0.25 makes it see through */
+  backdrop-filter: blur(10px);           /* this is the frosty glass effect */
+
+  z-index: 999; /* keeps the bar on top of all the windows */
+}
+
+
+/* ---------- the app icons on the desktop ---------- */
+.icon {
+  width: 80px;
+  text-align: center;
+  margin-bottom: 12px;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none; /* stops the label going blue when you double click */
+}
+
+/* the emoji i used instead of a real picture */
+.iconpicture {
+  font-size: 40px;
+  margin: 0px;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.iconlabel {
+  margin: 2px 0px 0px 0px;
+  color: #fff;
+  font-size: 12px;
+  text-shadow: 0px 1px 3px #000; /* so you can read it on a light wallpaper */
+}
+
+/* javascript adds this class when you click an icon once */
+.selected {
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: 1px solid #fff;
+}
+
+
+/* ---------- windows ---------- */
+.window {
+  position: absolute; /* the dragging code NEEDS this or it wont move */
+  display: flex;
+  flex-direction: column; /* header on top, body underneath */
+
+  background-color: #f4f4f4;
+  border: 1px solid #999;
+  border-radius: 10px;
+  overflow: hidden;      /* keeps the corners round */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.windowheader {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  background-color: #ddd;
+  border-bottom: 1px solid #bbb;
+
+  cursor: grab;       /* the little hand so people know to drag it */
+  user-select: none;  /* stops text getting highlighted while dragging */
+}
+
+.windowtitle {
+  margin: 0px;
+  margin-left: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #444;
+}
+
+.windowbody {
+  padding: 16px;
+  overflow: auto; /* if there is too much text you can scroll it */
+  font-size: 14px;
+}
+
+/* the little red dot like on a mac */
+.closebutton {
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  background-color: #ec6b5e;
+  border: 1px solid #c9564a;
+  cursor: pointer;
+}
+
+
+/* ---------- the notes app ---------- */
+#notesSidebar {
+  width: 160px;
+  border-right: 1px solid #ccc;
+  background-color: #eaeaea;
+  overflow: auto;
+}
+
+/* one row in the notes list. javascript makes these */
+.notecard {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.notecard:hover {
+  background-color: #dcdcdc;
+}
+
+.notetitle {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.notedate {
+  margin: 0px;
+  font-size: 11px;
+  color: gray;
+}
+
+#notesContent {
+  flex: 1;        /* means "take up all the leftover space" */
+  padding: 16px;
+  overflow: auto;
+}
+
+
+/* ---------- the projects app ---------- */
+#projectsGrid {
+  display: flex;
+  flex-wrap: wrap; /* if they dont fit they go to the next line */
+  gap: 8px;
+}
+
+.projectcard {
+  padding: 10px 14px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.projectcard:hover {
+  background-color: #e8e8ff;
+}
+
+#projectsInfo {
+  margin-top: 14px;
+  padding: 12px;
+  min-height: 60px;
+  background-color: #fff;
+  border: 1px dashed #bbb;
+  border-radius: 8px;
+}
